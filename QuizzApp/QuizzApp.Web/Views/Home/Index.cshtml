@@ -1,0 +1,27 @@
+﻿@model IEnumerable<QuizzQuestion>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<ul>
+    @foreach (var q in Model)
+    {
+        <li>
+            @q.Description
+            <ul>
+                @foreach (var a in q.Answers)
+                {
+                    <li>
+                        @a.Description
+                    </li>
+                }
+            </ul>
+        </li>
+    }
+</ul>
